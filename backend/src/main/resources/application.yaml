@@ -1,3 +1,25 @@
 spring:
   application:
-    name: backend
+    name: aerobook-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/aerobook
+    username: aerobook
+    password: aerobook123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  docker:
+    compose:
+      enabled: false
+
+server:
+  port: 8080

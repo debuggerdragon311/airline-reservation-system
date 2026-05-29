@@ -53,16 +53,16 @@ This is not a CRUD tutorial. It's modelled on how real airline backends are stru
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Backend | Java 21, Spring Boot 3 |
-| Database | PostgreSQL 15 |
+| Layer | Technology                  |
+|---|-----------------------------|
+| Backend | Java 25, Spring Boot 4      |
+| Database | PostgreSQL 16               |
 | ORM | Spring Data JPA / Hibernate |
-| Auth | Spring Security + JWT |
-| Frontend | React (Vite) |
-| API Docs | Swagger / OpenAPI 3 |
-| Build | Maven |
-| Infrastructure | Docker, Docker Compose |
+| Auth | Spring Security + JWT       |
+| Frontend | React (Vite)                |
+| API Docs | Swagger / OpenAPI 4         |
+| Build | Maven                       |
+| Infrastructure | Docker, Docker Compose      |
 
 ---
 
