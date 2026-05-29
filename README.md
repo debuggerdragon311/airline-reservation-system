@@ -6,9 +6,9 @@
 
 **A concurrent flight reservation platform built for reliability.**
 
-[![Java](https://img.shields.io/badge/Java_21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Java](https://img.shields.io/badge/Java_25-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot_4-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL_16-316192?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Status](https://img.shields.io/badge/Status-In_Development-orange?style=flat-square)]()
@@ -53,16 +53,16 @@ This is not a CRUD tutorial. It's modelled on how real airline backends are stru
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Backend | Java 21, Spring Boot 3 |
-| Database | PostgreSQL 15 |
+| Layer | Technology                  |
+|---|-----------------------------|
+| Backend | Java 25, Spring Boot 4      |
+| Database | PostgreSQL 16               |
 | ORM | Spring Data JPA / Hibernate |
-| Auth | Spring Security + JWT |
-| Frontend | React (Vite) |
-| API Docs | Swagger / OpenAPI 3 |
-| Build | Maven |
-| Infrastructure | Docker, Docker Compose |
+| Auth | Spring Security + JWT       |
+| Frontend | React (Vite)                |
+| API Docs | Swagger / OpenAPI 4         |
+| Build | Maven                       |
+| Infrastructure | Docker, Docker Compose      |
 
 ---
 
