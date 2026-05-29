@@ -3,16 +3,21 @@ spring:
     name: aerobook-backend
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/aerobook
-    username: aerobook
-    password: aerobook123
+    url: jdbc:postgresql://localhost:5432/${POSTGRES_DB:aerobook}
+    username: ${POSTGRES_USER:aerobook}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
+
+  sql:
+    init:
+      mode: always
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
     open-in-view: false
+    defer-datasource-initialization: true
     properties:
       hibernate:
         format_sql: true
