@@ -19,6 +19,32 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# virtual machine crash logs
 hs_err_pid*
 replay_pid*
+
+# Environment variables - NEVER commit these
+.env
+*.env
+.env.local
+.env.production
+
+# Build output
+target/
+build/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.DS_Store
+
+# Maven wrapper (optional, keep if teammates don't have Maven installed)
+# .mvn/
+# mvnw
+# mvnw.cmd
+
+# Spring Boot
+spring-shell.log
