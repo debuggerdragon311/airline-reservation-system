@@ -1,6 +1,6 @@
 package com.aerobook.backend.controller;
 
-import com.aerobook.backend.model.Flight;
+import com.aerobook.backend.dto.FlightSearchResponseDTO;
 import com.aerobook.backend.service.FlightService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/flights")
-@CrossOrigin(origins = "*") // Prevents CORS errors when you connect a frontend later
+@CrossOrigin(origins = "*")
 public class FlightController {
 
     private final FlightService flightService;
@@ -21,12 +21,12 @@ public class FlightController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<Flight>> searchFlights(
+    public ResponseEntity<List<FlightSearchResponseDTO>> searchFlights(
             @RequestParam String origin,
             @RequestParam String destination,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
 
-        List<Flight> results = flightService.searchFlights(origin, destination, date);
+        List<FlightSearchResponseDTO> results = flightService.searchFlights(origin, destination, date);
         return ResponseEntity.ok(results);
     }
 }

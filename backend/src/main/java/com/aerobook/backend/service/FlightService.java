@@ -1,14 +1,16 @@
 package com.aerobook.backend.service;
 
+import com.aerobook.backend.dto.FlightSearchResponseDTO;
 import com.aerobook.backend.model.Flight;
-import com.aerobook.backend.model.enums.FlightStatus; // <-- Updated path here!
+import com.aerobook.backend.model.enums.FlightStatus;
 import com.aerobook.backend.repository.FlightRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
-import java.time.Instant;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class FlightService {
@@ -19,18 +21,27 @@ public class FlightService {
         this.flightRepository = flightRepository;
     }
 
-    public List<Flight> searchFlights(String origin, String destination, LocalDate date) {
-        // Convert local date to UTC 24-hour window for the database
+    public List<FlightSearchResponseDTO> searchFlights(String origin, String destination, LocalDate date) {
         Instant startOfDay = date.atStartOfDay().toInstant(ZoneOffset.UTC);
         Instant endOfDay = date.plusDays(1).atStartOfDay().toInstant(ZoneOffset.UTC);
 
-        // Call the database query with the correctly imported Enum
-        return flightRepository.searchAvailable(
-                origin,
-                destination,
-                startOfDay,
-                endOfDay,
-                FlightStatus.SCHEDULED
+        List<Flight> rawFlights = flightRepository.searchAvailable(
+                origin, destination, startOfDay, endOfDay, FlightStatus.SCHEDULED
         );
+
+        // Map raw database entities to clean DTO response containers
+        return rawFlights.stream()
+                .map(flight -> new FlightSearchResponseDTO(
+                        flight.getId(),
+                        flight.getFlightNumber(),
+                        flight.getOrigin(),
+                        flight.getDestination(),
+                        flight.getDepartureTime(),
+                        flight.getArrivalTime(),
+                        flight.getTotalSeats(),
+                        flight.getStatus().name(),
+                        flight.getBasePrice()
+                ))
+                .collect(Collectors.toList());
     }
 }
