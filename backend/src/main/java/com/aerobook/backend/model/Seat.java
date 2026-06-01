@@ -50,7 +50,7 @@ public class Seat {
 
     /*
      * Optimistic lock — Hibernate increments this on every UPDATE.
-     * If two transactions read the same version and both attempt a write,
+     * If two transactions read the same version and both attempt to write,
      * the second throws OptimisticLockException. DO NOT remove or set manually.
      */
     @Version
