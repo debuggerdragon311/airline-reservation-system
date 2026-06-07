@@ -46,7 +46,7 @@ export default function Login({ isRegistering: initialIsRegistering = false }) {
             const data = await response.json()
 
             if (data.token) {
-                localStorage.setItem('token', data.token)
+                sessionStorage.setItem('token', data.token)//changing local storage to sessionstorage as requested by reviewer
             }
 
             toast.success(isRegistering ? "Welcome to the crew, traveler!" : "Login successful!")
